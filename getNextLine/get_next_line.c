@@ -25,9 +25,9 @@ int get_next_line(int const fd, char **line)
 {
     char buf [BUF_SIZE + 1];
     int ret;
-    //char *res;                                                                                                                                                                     
+    //char *res;
 
-    //*line = NULL;                                                                                                                                                                  
+    //*line = NULL;
     if (fd < 0 || BUF_SIZE <= 0)
         return (-1);
 
