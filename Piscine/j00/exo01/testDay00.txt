@@ -1,0 +1,3 @@
+touch -d '1 June 2014 23:42' testDay00 création de tesDay00 en date du 1 june 2014 pour avoir Jun  1 23:42 dans le ls
+chmod 455 testDay00 Permet de mettre les bon droits
+ajouter 40 byte dasn le fichier pour avoir la bonne taille
