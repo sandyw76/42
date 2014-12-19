@@ -7,7 +7,6 @@
 
 int	ft_position_bis(char **save, char **line, int i)
 {
-	printf("dans la fonction ft_position_bis()");
 	int ret;
 	char *tic;
 	char *tac;
@@ -26,12 +25,11 @@ int	ft_position_bis(char **save, char **line, int i)
 		*line = ft_strcat(*line, tic);
 	}
 	if ((*save)[i] == '\0')
-        tac = NULL;
-    else
-        tac = ft_strsub(*save, i, (ft_strlen(*save) - i));
-    free (*save);
-    *save = tac;
-    printf("ft_position_bis ret : %d",ret);
+		tac = NULL;
+	else
+		tac = ft_strsub(*save, i, (ft_strlen(*save) - i));
+	free (*save);
+	*save = tac;
 	return (ret);
 }
 char	*ft_realloc(char **save)
@@ -101,39 +99,39 @@ int get_next_line(int const fd, char **line)
 	*line = NULL;
 	buf = ft_strnew(BUF_SIZE + 1);
 	if ((BUF_SIZE <= 0) || (fd < 0))
-        return (-1);
-    if (save == NULL)
-    {
-        if (!(save = ft_strnew(BUF_SIZE + 1)))
-            return (-1);
-    }
+		return (-1);
+	if (save == NULL)
+	{
+		if (!(save = ft_strnew(BUF_SIZE + 1)))
+			return (-1);
+	}
 	return(ft_read(buf, &save, fd, line));
 }
 int main(int argc, char **argv)
 {
-    int fd;
-    char *line = NULL;
+	int fd;
+	char *line = NULL;
 
-    if (argc == 1)
-    {
-        ft_putstr("File name missing.");
-        return (1);
-    }
-    if (argc > 2)
-    {
-        ft_putstr("Too many arguments.");
-        return (1);
-    }
-    fd = open(argv[1], O_RDONLY);
-    while (get_next_line(fd, &line))
-    {
-        ft_putendl(line);
-        free(line);
-    }
-    if (close(fd) == -1)
-    {
-        ft_putstr("close error");
-        return (1);
-    }
-    return (0);
+	if (argc == 1)
+	{
+		ft_putstr("File name missing.");
+		return (1);
+	}
+	if (argc > 2)
+	{
+		ft_putstr("Too many arguments.");
+		return (1);
+	}
+	fd = open(argv[1], O_RDONLY);
+	while (get_next_line(fd, &line))
+	{
+		ft_putendl(line);
+		free(line);
+	}
+	if (close(fd) == -1)
+	{
+		ft_putstr("close error");
+		return (1);
+	}
+	return (0);
 }
