@@ -5,23 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlatapie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 10:34:05 by jlatapie          #+#    #+#             */
-/*   Updated: 2014/11/09 10:34:05 by jlatapie         ###   ########.fr       */
+/*   Created: 2014/12/16 13:58:37 by jlatapie          #+#    #+#             */
+/*   Updated: 2014/12/16 13:58:43 by jlatapie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *s1, const char *s2)
 {
-	size_t i;
+	char	*s1_begin;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	s1_begin = s1;
+	while ((*s1++ = *s2++))
+		;
+	return (s1_begin);
 }

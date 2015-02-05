@@ -5,14 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlatapie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 10:32:00 by jlatapie          #+#    #+#             */
-/*   Updated: 2014/11/09 10:32:03 by jlatapie         ###   ########.fr       */
+/*   Created: 2014/12/16 14:02:15 by jlatapie          #+#    #+#             */
+/*   Updated: 2014/12/16 14:02:22 by jlatapie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	return (ft_memset(s, '\0', n));
+	if (n)
+		ft_memset((unsigned char*)s, 0, n);
 }

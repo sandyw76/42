@@ -5,20 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlatapie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 10:38:59 by jlatapie          #+#    #+#             */
-/*   Updated: 2014/11/09 10:39:00 by jlatapie         ###   ########.fr       */
+/*   Created: 2014/12/16 14:01:50 by jlatapie          #+#    #+#             */
+/*   Updated: 2014/12/16 14:01:57 by jlatapie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-void *ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
-	char *k;
+	void	*mem;
 
-	k = (char *)malloc(sizeof(char) * size);
-	if (k == NULL)
+	if (!size)
 		return (NULL);
-	ft_bzero(k, size);
-	return (k);
+	mem = (void*)malloc(size * sizeof(void*));
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, size);
+	return (mem);
 }

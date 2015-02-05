@@ -5,24 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlatapie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 10:31:42 by jlatapie          #+#    #+#             */
-/*   Updated: 2014/11/09 10:31:46 by jlatapie         ###   ########.fr       */
+/*   Created: 2014/12/16 14:02:42 by jlatapie          #+#    #+#             */
+/*   Updated: 2014/12/16 14:02:45 by jlatapie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned	char	*str;
-	size_t				i;
+	unsigned char	*bstr;
 
-	i = 0;
-	str = (unsigned char *)b;
-	while (i < len)
+	bstr = b;
+	while (len--)
 	{
-		str[i] = (unsigned char)c;
-		i++;
+		*bstr = (unsigned char)c;
+		bstr++;
 	}
 	return (b);
 }

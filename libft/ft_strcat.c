@@ -5,32 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlatapie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 10:34:32 by jlatapie          #+#    #+#             */
-/*   Updated: 2014/11/11 11:43:47 by jlatapie         ###   ########.fr       */
+/*   Created: 2014/12/16 13:59:00 by jlatapie          #+#    #+#             */
+/*   Updated: 2014/12/16 13:59:05 by jlatapie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-char *ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t		i;
-	size_t		k;
-	char		*p;
+	char	*s1_begin;
 
-	p = s1;
-	i = 0;
-	k = 0;
-	s1 = (char *)malloc(sizeof(char) * 10000);
-	s1 = p;
-	while (i != ft_strlen(s1))
-		i++;
-	while (s2[k])
-	{
-		s1[i] = s2[k];
-		k++;
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
+	s1_begin = s1;
+	while (*s1)
+		s1++;
+	while ((*s1++ = *s2++))
+		;
+	return (s1_begin);
 }

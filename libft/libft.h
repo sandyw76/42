@@ -3,25 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lwandell <lwandell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlatapie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/08 18:16:31 by lwandell          #+#    #+#             */
-/*   Updated: 2014/11/10 12:37:58 by jlatapie         ###   ########.fr       */
+/*   Created: 2014/11/11 18:35:13 by jlatapie          #+#    #+#             */
+/*   Updated: 2014/12/16 14:50:41 by jlatapie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
+# include <string.h>
 
+void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
-void	*ft_bzero(void  *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
-void	*ft_memmove(void    *dst, const void *src, size_t len);
+void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);

@@ -5,33 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlatapie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 10:41:09 by jlatapie          #+#    #+#             */
-/*   Updated: 2014/11/11 11:22:55 by jlatapie         ###   ########.fr       */
+/*   Created: 2014/12/16 13:57:49 by jlatapie          #+#    #+#             */
+/*   Updated: 2014/12/16 13:57:52 by jlatapie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-char *ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char	*r;
-	size_t	i;
-	int		a;
-	size_t	v;
+	size_t	len_str;
+	char	*new_str;
 
-	v = (size_t)start;
-	a = 0;
-	i = 0;
-	if (s == NULL)
+	len_str = ft_strlen(s);
+	if (start > len_str || len > len_str)
 		return (NULL);
-	r = ft_strnew(len);
-	while (i < v)
-		i++;
-	while (i < (v + len))
-	{
-		r[a] = s[i];
-		i++;
-		a++;
-	}
-	return (r);
+	if (start + len > len_str)
+		return (NULL);
+	if (!(new_str = ft_strnew(len)))
+		return (NULL);
+	new_str = ft_strncpy(new_str, s + start, len);
+	new_str[len] = '\0';
+	return (new_str);
 }

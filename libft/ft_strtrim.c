@@ -6,11 +6,12 @@
 /*   By: jlatapie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 10:41:29 by jlatapie          #+#    #+#             */
-/*   Updated: 2014/11/11 11:33:26 by jlatapie         ###   ########.fr       */
+/*   Updated: 2014/11/12 20:56:39 by jlatapie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 char *ft_strtrim(char const *s)
 {
